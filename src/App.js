@@ -1,43 +1,21 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route, Link } from "react-router-dom";
-import Home from "./pages/home";
-import Login from "./pages/login";
-import CreatePost from "./pages/create-post";
-import { startAfter } from "firebase/firestore";
-import { useState } from "react";
-import { signOut } from "firebase/auth";
-import { auth } from "./firebase-config";
+import HomePage from "./pages/Home";
+import AdminPage from "./pages/Admin/Admin";
 
 function App() {
-  const [isAuth, setIsAuth] = useState(localStorage.getItem("isAuth"));
-
-  const signUserOut = () => {
-    signOut(auth).then(() => {
-      localStorage.clear();
-      setIsAuth(false);
-      window.location.pathname = "/login";
-    });
-  };
-
   return (
     <Router>
       <nav>
         <Link to="/"> Home </Link>
-
-        {!isAuth ? (
-          <Link to="/login"> Login </Link>
-        ) : (
-          <>
-            <Link to="/createpost"> Create Post </Link>
-            <button onClick={signUserOut}> Log Out</button>
-          </>
-        )}
       </nav>
-      <Routes>
-        <Route path="/" element={<Home isAuth={isAuth} />} />
-        <Route path="/createpost" element={<CreatePost isAuth={isAuth} />} />
-        <Route path="/login" element={<Login setIsAuth={setIsAuth} />} />
-      </Routes>
+      <main>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/~admin" element={<AdminPage />} />
+          <Route path="/~admin/:id" element={<AdminPage />} />
+        </Routes>
+      </main>
     </Router>
   );
 }

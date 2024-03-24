@@ -1,0 +1,15 @@
+.admin {
+  display: flex;
+  height: 100%;
+
+  .article__list {
+    flex: 1;
+    height: 100%;
+  }
+
+  .preview {
+    flex: 3;
+    background-color: azure;
+    height: 100%;
+  }
+}

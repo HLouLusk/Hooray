@@ -2,8 +2,8 @@ import React, { useEffect, useState } from "react";
 import { getDocs, collection, deleteDoc, doc } from "firebase/firestore";
 import { auth, db } from "../firebase-config";
 
-function Home({ isAuth }) {
-  const [postLists, setPostList] = useState([]);
+function Home() {
+  const [postList, setPostList] = useState([]);
   const postsCollectionRef = collection(db, "posts");
 
   useEffect(() => {
@@ -22,7 +22,7 @@ function Home({ isAuth }) {
 
   return (
     <div className="homePage">
-      {postLists.map((post) => {
+      {postList.map((post) => {
         return (
           <div className="post">
             <div className="postHeader">
@@ -30,7 +30,7 @@ function Home({ isAuth }) {
                 <h1> {post.title}</h1>
               </div>
               <div className="deletePost">
-                {isAuth && post.author.id === auth.currentUser.uid && (
+                {post.author.id === auth.currentUser.uid && (
                   <button
                     onClick={() => {
                       deletePost(post.id);
