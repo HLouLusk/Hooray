@@ -168,10 +168,10 @@ const AdminPage = () => {
     <>
       <main>
         {!isLoggedIn ? (
-          <section>
-            <p> Login </p>
+          <section className="login-container">
+            <h2>Login</h2>
             <form>
-              <div>
+              <div className="form-group">
                 <label htmlFor="email-address">Email address</label>
                 <input
                   id="email-address"
@@ -183,7 +183,7 @@ const AdminPage = () => {
                   value={email}
                 />
               </div>
-              <div>
+              <div className="form-group">
                 <label htmlFor="password">Password</label>
                 <input
                   id="password"
@@ -196,7 +196,9 @@ const AdminPage = () => {
                 />
               </div>
               <div>
-                <button onClick={onLogin}>Login</button>
+                <button className="btn-login" onClick={onLogin}>
+                  Login
+                </button>
               </div>
             </form>
           </section>
