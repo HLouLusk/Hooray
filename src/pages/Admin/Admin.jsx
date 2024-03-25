@@ -226,7 +226,7 @@ const AdminPage = () => {
                 <Article
                   title={post.title}
                   text={post.text}
-                  publishDate={post.published}
+                  published={post.published}
                   id={post.id}
                   callback={() => setIsEditing(false)}
                 />
