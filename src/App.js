@@ -8,10 +8,12 @@ function App() {
     <Router>
       <nav>
         <Link to="/"> Home </Link>
+        <Link to="/blog"> Blog </Link>
       </nav>
       <main>
         <Routes>
           <Route path="/" element={<HomePage />} />
+          <Route path="/blog" element={<HomePage />} />
           <Route path="/~admin" element={<AdminPage />} />
           <Route path="/~admin/:id" element={<AdminPage />} />
         </Routes>

@@ -17,7 +17,8 @@ import { useNavigate, useParams } from "react-router-dom";
 const AdminPage = () => {
   const navigate = useNavigate();
   // login flow
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  // !change use state above for editing
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   // rendering articles
@@ -26,6 +27,8 @@ const AdminPage = () => {
   const [searchText, setSearchText] = useState("");
   // previewing articles
   const { id } = useParams();
+  const [initialTitle, setInitialTitle] = useState("");
+  const [initialText, setInitialText] = useState("");
   const [title, setTitle] = useState("");
   const [text, setText] = useState("");
   const [isEditing, setIsEditing] = useState(false);
@@ -62,14 +65,19 @@ const AdminPage = () => {
         if (a.published > b.published) return -1; // a comes before b
         return 0; // dates are equal
       });
-      setPostList(sortedData);
+      setPostList((prev) => sortedData);
+      return sortedData;
     } catch (error) {
       console.error("Error fetching posts:", error);
     }
   };
 
   const navigateToFirstArticle = () => {
-    navigate(`/~admin/${postList[0].id}`);
+    if (postList.length === 0) {
+      navigate("/~admin/");
+    } else {
+      navigate(`/~admin/${postList[0].id}`);
+    }
   };
 
   const getArticleById = async (articleId) => {
@@ -80,6 +88,9 @@ const AdminPage = () => {
 
       if (docSnap.exists()) {
         const article = docSnap.data();
+        setInitialTitle(article.title);
+        setInitialText(article.text);
+
         setTitle(article.title);
         setText(article.text);
       } else {
@@ -122,6 +133,8 @@ const AdminPage = () => {
   const toggleCreateUI = (e) => {
     e.preventDefault();
     navigate("/~admin");
+    setInitialTitle("");
+    setInitialText("");
     setTitle("");
     setText("");
     setIsEditing(true);
@@ -134,21 +147,25 @@ const AdminPage = () => {
 
   const toggleCancelUI = (e) => {
     e.preventDefault();
+    setTitle(initialTitle);
+    setText(initialText);
     setIsEditing(false);
   };
 
-  const handleDelete = (e) => {
+  const handleDelete = async (e) => {
     e.preventDefault();
-    deleteArticleById(id);
+    await deleteArticleById(id);
     setIsEditing(false);
-    getArticles();
+    await getArticles();
+    navigateToFirstArticle();
   };
 
-  const handleSave = (e) => {
+  const handleSave = async (e) => {
     e.preventDefault();
-    saveArticle(id);
+    await saveArticle(id);
     setIsEditing(false);
-    getArticles();
+    const articles = await getArticles();
+    if (!id) navigate(`/~admin/${articles[0].id}`);
   };
 
   // get articles for list
@@ -211,6 +228,7 @@ const AdminPage = () => {
                   text={post.text}
                   publishDate={post.published}
                   id={post.id}
+                  callback={() => setIsEditing(false)}
                 />
               ))}
             </section>
@@ -224,36 +242,35 @@ const AdminPage = () => {
                 ) : (
                   <>
                     {id && <button onClick={toggleEditUI}>Edit</button>}
-                    <button onClick={handleDelete}>Delete</button>
+                    {id && <button onClick={handleDelete}>Delete</button>}
                     <button onClick={toggleCreateUI}>Create</button>
                   </>
                 )}
               </section>
-              <div>Hello</div>
-              <div>{title}</div>
-              <div className="cpContainer">
-                <h1>Create A Post</h1>
-                <div className="inputGp">
-                  <label> Title:</label>
-                  <input
-                    placeholder="Title..."
-                    onChange={(event) => {
-                      setTitle(event.target.value);
-                    }}
-                    value={title}
-                  />
-                </div>
+              <div className="preview__content">
+                <input
+                  className={`preview__title ${
+                    isEditing && "preview__title--editing"
+                  }`}
+                  placeholder="Title..."
+                  onChange={(event) => {
+                    setTitle(event.target.value);
+                  }}
+                  value={title}
+                  disabled={!isEditing}
+                />
 
-                <div className="inputGp">
-                  <label> Text:</label>
-                  <input
-                    placeholder="Text..."
-                    onChange={(event) => {
-                      setText(event.target.value);
-                    }}
-                    value={text}
-                  />
-                </div>
+                <textarea
+                  className={`preview__text ${
+                    isEditing && "preview__text--editing"
+                  }`}
+                  placeholder="Text..."
+                  onChange={(event) => {
+                    setText(event.target.value);
+                  }}
+                  value={text}
+                  disabled={!isEditing}
+                />
               </div>
             </section>
           </div>
