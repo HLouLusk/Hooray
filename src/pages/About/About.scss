@@ -1,0 +1,23 @@
+@use "../../styles/mixins" as *;
+
+.staff-name {
+  padding-left: 20rem;
+  padding-top: 5rem;
+  font-size: 18px;
+
+  @media (min-width: $screen-md-min) {
+    font-size: 25px;
+  }
+}
+
+.about-company__staff-box {
+  background-color: aqua;
+  height: 200px;
+}
+
+.about-company__staff-description {
+  text-align: left;
+
+  padding-left: 20rem;
+  padding-top: 3rem;
+}

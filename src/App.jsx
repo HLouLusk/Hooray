@@ -7,6 +7,7 @@ import Portfolio from "./pages/Portfolio/Portfolio";
 import About from "./pages/About/About";
 import Blog from "./pages/Blog/Blog";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Route path="/~admin/:id" element={<Admin />} />
         </Routes>
       </main>
+      <Footer />
     </Router>
   );
 }

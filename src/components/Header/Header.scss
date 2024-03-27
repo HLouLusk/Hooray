@@ -1,15 +1,31 @@
+@use "../../styles/mixins" as *;
+
 .header {
   margin: 0;
-  padding: 0 16px;
-  box-sizing: border-box;
+  padding: 10px 16px;
   width: 100%;
-  height: 80px;
-  background-color: #c8a2c8;
+  background-color: white;
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 16px;
   align-items: center;
-  color: white;
+  justify-content: space-between;
+  color: black;
   text-decoration: none;
+  position: fixed;
+
+  font-weight: bold;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+
+  @media (min-width: $screen-md-min) {
+    flex-direction: row;
+    padding: 0px 32px;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Adjust as needed */
+  }
 
   &__left {
     display: flex;
@@ -23,8 +39,14 @@
     color: inherit;
 
     img {
-      width: 40px; /* Adjust logo size as needed */
-      margin-right: 10px;
+      width: 45px;
+      border-radius: 90px;
+      padding-right: 5px;
+
+      @media (min-width: $screen-md-min) {
+        width: 65px;
+        margin-right: 10px;
+      }
     }
 
     .header__company-name {
@@ -33,6 +55,8 @@
   }
 
   &__right {
+    padding-right: 24px;
+
     .header__nav {
       ul {
         list-style: none;
@@ -50,7 +74,15 @@
           a {
             text-decoration: none;
             color: inherit;
-            font-size: 16px;
+            font-size: 12px;
+
+            @media (min-width: $screen-md-min) {
+              font-size: 16px;
+            }
+
+            @media (min-width: $screen-lg-min) {
+              font-size: 18px;
+            }
 
             &:hover {
               text-decoration: underline;
