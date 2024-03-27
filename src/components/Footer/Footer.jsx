@@ -1,6 +1,6 @@
 import React from "react";
 import "./Footer.scss";
-import Location from "../../assets/location.png";
+import Location from "../../assets/images/location.png";
 
 const Footer = () => {
   return (

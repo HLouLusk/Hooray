@@ -1,17 +1,6 @@
 @use "../../styles/mixins" as *;
 
-.services-cards_container {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-
-  @media (min-width: $screen-md-min) {
-    flex-direction: row;
-    flex-wrap: wrap;
-  }
-}
-
-.cards-container__block {
+.service {
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -20,33 +9,32 @@
   text-align: left;
   border: 2px solid #ccc;
   box-shadow: 0 0 50px #ccc;
-  // width: 90%;
   margin: 5px auto;
-}
+  gap: 1rem;
 
-.cards-container__titles {
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
+  &__title {
+    @include mobile-subheader;
+  }
 
-p {
-  padding-bottom: 0.5rem;
-}
+  &__text {
+    padding-bottom: 0.5rem;
+  }
 
-.service-provided_blob {
-  display: flex;
-  flex-wrap: wrap;
-  flex: 1 1;
-  align-content: flex-end;
-  row-gap: 0.5rem;
-  column-gap: 0.5rem;
-}
+  &__tech-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1;
+    align-content: flex-end;
+    row-gap: 0.5rem;
+    column-gap: 0.5rem;
+  }
 
-.service-blob_container {
-  display: flex;
-  width: fit-content;
-  border-radius: 1rem;
-  justify-content: center;
-  background-color: #fac29e;
-  padding: 0.4rem 0.8rem;
+  &__tech {
+    display: flex;
+    width: fit-content;
+    border-radius: 1rem;
+    justify-content: center;
+    background-color: #fac29e;
+    padding: 0.4rem 0.8rem;
+  }
 }

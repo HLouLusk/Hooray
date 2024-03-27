@@ -1,4 +1,3 @@
-import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Admin from "./pages/Admin/Admin";
@@ -8,8 +7,9 @@ import About from "./pages/About/About";
 import Blog from "./pages/Blog/Blog";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import "./App.scss";
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Header />
@@ -27,5 +27,6 @@ function App() {
       <Footer />
     </Router>
   );
-}
+};
+
 export default App;

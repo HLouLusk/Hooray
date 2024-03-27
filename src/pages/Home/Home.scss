@@ -1,30 +1,17 @@
 @use "../../styles/mixins" as *;
 
-.hero-banner {
+.hero {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   background-color: #e9ece0;
   width: 100%;
   height: fit-content;
-  display: flex;
-  justify-content: space-around;
+
   padding: 10vh 32px;
 
-  img {
-    display: none;
-
-    @media (min-width: $screen-md-min) {
-      width: 550px;
-      margin: auto;
-    }
-
-    @media (min-width: $screen-lg-min) {
-      width: 600px;
-      margin: auto;
-    }
-  }
-
-  h1 {
-    padding: 10px 0 30px 20px;
-    font-size: 30px;
+  &__title {
+    @include mobile-header;
 
     @media (min-width: $screen-md-min) {
       font-size: 40px;
@@ -37,9 +24,7 @@
   }
 
   &__description {
-    padding: 10px 0 30px 20px;
-    line-height: 20px;
-    font-size: 18px;
+    @include mobile-copy;
 
     @media (min-width: $screen-md-min) {
       line-height: 32px;
@@ -51,11 +36,10 @@
   button {
     font-size: 14px;
     font-weight: bold;
-    width: 90vw;
+    width: 100%;
     height: 5vh;
     border-radius: 10px;
     border-color: #88b3c1;
-    margin-left: 20px;
     box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
       rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
 
@@ -69,26 +53,15 @@
       height: 3rem;
     }
   }
-
-  &__left {
-    flex: 1;
-  }
-
-  &__right {
-    width: 800px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
 }
 
-.services-section {
-  padding-bottom: 50px;
+.services {
+  padding: 5vh 32px;
 
-  &_header {
-    padding: 20px 0;
+  &__title {
+    @include mobile-header;
     text-align: center;
-    font-weight: bold;
+    padding: 20px 0;
 
     @media (min-width: $screen-md-min) {
       font-size: 30px;
