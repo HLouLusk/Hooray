@@ -14,7 +14,7 @@ import "./Admin.scss";
 import Article from "../../components/Article/Article";
 import { useNavigate, useParams } from "react-router-dom";
 
-const AdminPage = () => {
+const Admin = () => {
   const navigate = useNavigate();
   // login flow
   const [isLoggedIn, setIsLoggedIn] = useState(true);
@@ -280,4 +280,4 @@ const AdminPage = () => {
   );
 };
 
-export default AdminPage;
+export default Admin;
