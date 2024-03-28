@@ -1,5 +1,26 @@
 @use "../../styles/mixins" as *;
 
+.call-to-action {
+  font-size: 14px;
+  font-weight: bold;
+  width: 100%;
+  height: 5vh;
+  border-radius: 10px;
+  border-color: #88b3c1;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
+    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
+
+  &:hover {
+    background-color: #fac29e;
+  }
+
+  @media (min-width: $screen-md-min) {
+    font-size: 18px;
+    width: 9rem;
+    height: 3rem;
+  }
+}
+
 .hero {
   display: flex;
   flex-direction: column;
@@ -32,30 +53,12 @@
       width: 60%;
     }
   }
-
-  button {
-    font-size: 14px;
-    font-weight: bold;
-    width: 100%;
-    height: 5vh;
-    border-radius: 10px;
-    border-color: #88b3c1;
-    box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-      rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-
-    &:hover {
-      background-color: #fac29e;
-    }
-
-    @media (min-width: $screen-md-min) {
-      font-size: 18px;
-      width: 9rem;
-      height: 3rem;
-    }
-  }
 }
 
 .services {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
   padding: 5vh 32px;
 
   &__title {
@@ -71,6 +74,25 @@
   &__card-container {
     display: flex;
     flex-direction: column;
+    gap: 10px;
+
+    @media (min-width: $screen-md-min) {
+      flex-direction: row;
+    }
+  }
+}
+
+.members {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 5vh 32px;
+  background-color: #e9ece0;
+
+  &__card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
 
     @media (min-width: $screen-md-min) {
       flex-direction: row;

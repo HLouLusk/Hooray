@@ -6,14 +6,14 @@ export const HERO_TEXT =
 
 export const SERVICES = [
   {
-    title: "Mobile App Development",
-    text: "Simplify your customer's journey with our custom-built mobile apps. We make your app not just functional but a joy to use.",
-    technologies: ["Typescript", "Kotlin", "React Native", "Swift"],
-  },
-  {
     title: "Web Development",
     text: "Capture your audience's attention with our cutting-edge web designs. Your website is the front door to your business; we make sure it's unforgettable.",
     technologies: ["NodeJS", "AWS", "Redux", "NextJS", "Express"],
+  },
+  {
+    title: "Mobile Development",
+    text: "Simplify your customer's journey with our custom-built mobile apps. We make your app not just functional but a joy to use.",
+    technologies: ["Typescript", "Kotlin", "Swift", "React Native"],
   },
   {
     title: "Database Design",
@@ -24,5 +24,20 @@ export const SERVICES = [
     title: "Staff Augmentation",
     text: "Need an extra hand? Our full-stack developers integrate seamlessly with your team, boosting productivity and accelerating your project timelines.",
     technologies: ["Quality Control", "Efficiency", "Cost-Saving", "Growth"],
+  },
+];
+
+export const MEMBERS = [
+  {
+    name: "Eric Lusk-Jopson",
+    role: "Senior Full Stack Developer",
+  },
+  {
+    name: "Bill Xu",
+    role: "Senior Full Stack Developer",
+  },
+  {
+    name: "Louise Lusk",
+    role: "Frontend Specialist",
   },
 ];

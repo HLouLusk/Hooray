@@ -1,0 +1,29 @@
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 5vh 32px;
+
+  .contact-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 10px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .single-thumb .range-slider__thumb[data-lower] {
+    width: 0;
+  }
+  .single-thumb .range-slider__range {
+    border-radius: 6px;
+  }
+
+  .range-slider {
+    box-sizing: border-box;
+    width: 90%;
+    margin: 24px auto;
+    height: 2px;
+  }
+}

@@ -190,6 +190,7 @@ const Admin = () => {
             <div className="form-group">
               <label htmlFor="email-address">Email address</label>
               <input
+                className="login__input"
                 id="email-address"
                 name="email"
                 type="email"
@@ -202,6 +203,7 @@ const Admin = () => {
             <div className="form-group">
               <label htmlFor="password">Password</label>
               <input
+                className="login__input"
                 id="password"
                 name="password"
                 type="password"
