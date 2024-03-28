@@ -4,13 +4,28 @@
   gap: 24px;
   padding: 5vh 32px;
 
+  .contact-label--required {
+    color: rgb(205, 14, 14);
+    // font-size: 24px;
+    font-weight: bold;
+  }
+
   .contact-input {
     width: 100%;
     box-sizing: border-box;
-    padding: 10px;
+    padding: 12px 10px 2px 2px;
     font-size: 16px;
     border-radius: 5px;
-    border: 1px solid #ccc;
+    border: none;
+    border-bottom: 1px solid #ccc;
+    outline: none;
+
+    &--auto-resize {
+      font-weight: 100;
+      resize: none;
+      overflow: hidden;
+      font-family: inherit;
+    }
   }
 
   .single-thumb .range-slider__thumb[data-lower] {
@@ -22,7 +37,6 @@
 
   .range-slider {
     box-sizing: border-box;
-    width: 90%;
     margin: 24px auto;
     height: 2px;
   }

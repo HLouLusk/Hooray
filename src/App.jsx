@@ -8,6 +8,7 @@ import Blog from "./pages/Blog/Blog";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
 import "./App.scss";
+import ContactForm from "./components/ContactForm/ContactForm";
 
 const App = () => {
   return (
