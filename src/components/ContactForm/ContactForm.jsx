@@ -10,9 +10,9 @@ const ContactForm = () => {
   const [budget, setBudget] = useState([0, 5000]);
   const [description, setDescription] = useState("");
   const [website, setWebsite] = useState("");
-
-  const callToAction =
-    CALLSTOACTION[Math.floor(Math.random() * CALLSTOACTION.length)];
+  const [callToAction, setCallToAction] = useState(
+    CALLSTOACTION[Math.floor(Math.random() * CALLSTOACTION.length)]
+  );
 
   const handleNameChange = (event) => {
     setName(event.target.value);

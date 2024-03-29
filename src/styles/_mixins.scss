@@ -63,3 +63,12 @@ $screen-lg-min: 1280px;
   line-height: 20px;
   font-weight: 600;
 }
+
+@mixin info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  height: fit-content;
+  padding: 10vh 32px;
+}

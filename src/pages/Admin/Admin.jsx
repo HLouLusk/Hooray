@@ -17,7 +17,7 @@ import { useNavigate, useParams } from "react-router-dom";
 const Admin = () => {
   const navigate = useNavigate();
   // login flow
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   // !change use state above for editing
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");

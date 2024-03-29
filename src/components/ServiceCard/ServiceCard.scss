@@ -11,6 +11,13 @@
   box-shadow: 0 0 50px #ccc;
   margin: 5px auto;
   gap: 1rem;
+  width: 300px;
+  min-width: 270px;
+  max-width: 330px;
+
+  @media (min-width: $screen-md-min) {
+    margin: none;
+  }
 
   &__title {
     @include mobile-subheader;

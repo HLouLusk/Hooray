@@ -31,13 +31,19 @@ export const MEMBERS = [
   {
     name: "Eric Lusk-Jopson",
     role: "Senior Full Stack Developer",
+    description:
+      "Developer with experience in all stages of advanced web development. Key areas of focus are UI, testing, and debugging. Eager to approach new technologies through hands-on learning. Experience outside web development includes Java, Python and R backed by a strong foundation in mathematics. Passionate about technology as it relates to linguistics, economics, transportation and finance.",
   },
   {
     name: "Bill Xu",
     role: "Senior Full Stack Developer",
+    description:
+      "Developer with experience in all stages of advanced web development. Key areas of focus are UI, testing, and debugging. Eager to approach new technologies through hands-on learning. Experience outside web development includes Java, Python and R backed by a strong foundation in mathematics. Passionate about technology as it relates to linguistics, economics, transportation and finance.",
   },
   {
     name: "Louise Lusk",
     role: "Frontend Specialist",
+    description:
+      "Developer with experience in all stages of advanced web development. Key areas of focus are UI, testing, and debugging. Eager to approach new technologies through hands-on learning. Experience outside web development includes Java, Python and R backed by a strong foundation in mathematics. Passionate about technology as it relates to linguistics, economics, transportation and finance.",
   },
 ];

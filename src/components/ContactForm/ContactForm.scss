@@ -1,12 +1,15 @@
+@use "../../styles/mixins" as *;
+
 .contact-form {
   display: flex;
   flex-direction: column;
   gap: 24px;
   padding: 5vh 32px;
+  max-width: 500px;
+  margin: 24px auto;
 
   .contact-label--required {
     color: rgb(205, 14, 14);
-    // font-size: 24px;
     font-weight: bold;
   }
 
@@ -15,10 +18,10 @@
     box-sizing: border-box;
     padding: 12px 10px 2px 2px;
     font-size: 16px;
-    border-radius: 5px;
     border: none;
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid black;
     outline: none;
+    background-color: transparent;
 
     &--auto-resize {
       font-weight: 100;
@@ -37,7 +40,7 @@
 
   .range-slider {
     box-sizing: border-box;
-    margin: 24px auto;
+    margin: 24px 0;
     height: 2px;
   }
 }

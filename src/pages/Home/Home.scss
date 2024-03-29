@@ -22,25 +22,8 @@
 }
 
 .hero {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  @include info-section;
   background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  width: 100%;
-  height: fit-content;
-  padding: 10vh 32px;
-
-  @keyframes gradient {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
 
   &__title {
     @include mobile-header;
@@ -52,6 +35,7 @@
 
     @media (min-width: $screen-lg-min) {
       font-size: 60px;
+      line-height: 60px;
     }
   }
 
@@ -67,9 +51,7 @@
 }
 
 .services {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  @include info-section;
   padding: 5vh 32px;
 
   &__title {
@@ -89,14 +71,13 @@
 
     @media (min-width: $screen-md-min) {
       flex-direction: row;
+      flex-wrap: wrap;
     }
   }
 }
 
 .members {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
+  @include info-section;
   padding: 5vh 32px;
   background-color: #e9ece0;
 
