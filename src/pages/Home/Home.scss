@@ -1,70 +1,11 @@
 @use "../../styles/mixins" as *;
-
-.call-to-action {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 14px;
-  font-weight: bold;
-  min-width: 9rem;
-  width: fit-content;
-  height: 5vh;
-  border-radius: 10px;
-  border: 2px solid #666;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 13px 27px -5px,
-    rgba(0, 0, 0, 0.3) 0px 8px 16px -8px;
-  text-decoration: none;
-  color: black;
-  padding: 2px 5px;
-  background-color: #23d5ab;
-
-  &:hover {
-    background: #fac29e;
-  }
-
-  @media (min-width: $screen-md-min) {
-    font-size: 18px;
-    min-width: 9rem;
-    height: 3rem;
-  }
-
-  &--centered {
-    align-self: center;
-  }
-}
-
-.hero {
-  @include info-section;
-  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-
-  &__title {
-    @include mobile-header;
-
-    @media (min-width: $screen-md-min) {
-      font-size: 40px;
-      width: 60%;
-    }
-
-    @media (min-width: $screen-lg-min) {
-      font-size: 60px;
-      line-height: 60px;
-    }
-  }
-
-  &__description {
-    @include mobile-copy;
-
-    @media (min-width: $screen-md-min) {
-      line-height: 32px;
-      font-size: 24px;
-      width: 60%;
-    }
-  }
-}
+@use "../../styles/partials" as *;
 
 .services {
+  position: relative;
   @include info-section;
-  padding: 5vh 32px;
+  padding: 5vh 32px 160px;
+  background: $light;
 
   &__title {
     @include mobile-header;
@@ -90,9 +31,10 @@
 }
 
 .members {
+  position: relative;
   @include info-section;
-  padding: 5vh 32px;
-  background-color: #e9ece0;
+  padding: 5vh 32px 160px;
+  background: $dark;
 
   &__card-container {
     display: flex;
@@ -103,4 +45,75 @@
       flex-direction: row;
     }
   }
+}
+
+.contact {
+  margin: 0;
+  padding: 5vh 32px;
+  background: $terracotta;
+}
+
+// Hero Bottom
+.custom-shape-divider-bottom-1711915537 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1711915537 svg {
+  position: relative;
+  display: block;
+  width: calc(157% + 1.3px);
+  height: 167px;
+}
+
+.custom-shape-divider-bottom-1711915537 .shape-fill {
+  fill: $light;
+}
+
+// Services Section Bottom
+.custom-shape-divider-bottom-1711916057 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1711916057 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 104px;
+}
+
+.custom-shape-divider-bottom-1711916057 .shape-fill {
+  fill: $dark;
+}
+
+// Members Bottom
+.custom-shape-divider-bottom-1711916440 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1711916440 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 104px;
+}
+
+.custom-shape-divider-bottom-1711916440 .shape-fill {
+  fill: $terracotta;
 }

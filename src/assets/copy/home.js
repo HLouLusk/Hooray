@@ -1,9 +1,3 @@
-export const HERO_TITLE =
-  "Elevate Your Business: Custom Web & Mobile Solutions";
-
-export const HERO_TEXT =
-  "Welcome to Hooray!—your Canadian tech ally. Led by seasoned web experts, we empower small and mid-sized businesses with tailor-made web and mobile solutions. Our mission? To launch your business goals into new heights with sleek, enduring software. Your success story starts here.";
-
 export const SERVICES = [
   {
     title: "Web Development",

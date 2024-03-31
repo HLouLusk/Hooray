@@ -1,12 +1,21 @@
 @use "../../styles/mixins" as *;
+@use "../../styles/partials" as *;
 
 .contact-form {
   display: flex;
   flex-direction: column;
-  gap: 24px;
-  padding: 5vh 32px;
+  gap: 18px;
+  padding: 24px;
   max-width: 500px;
   margin: 24px auto;
+  background-color: $beige;
+  border-radius: 10px;
+  border: 2px solid $blue;
+  box-shadow: $darkest 0px 23px 37px -5px;
+
+  label {
+    margin: 0px;
+  }
 
   .contact-label--required {
     color: rgb(205, 14, 14);

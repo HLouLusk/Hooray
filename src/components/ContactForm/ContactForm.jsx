@@ -80,8 +80,8 @@ const ContactForm = () => {
         </label>
         <RangeSlider
           className="single-thumb"
-          max={50000}
-          step={5000}
+          max={20000}
+          step={2000}
           thumbsDisabled={[true, false]}
           rangeSlideDisabled={true}
           value={budget}
