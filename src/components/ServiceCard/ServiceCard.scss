@@ -16,7 +16,7 @@
   max-width: 330px;
 
   @media (min-width: $screen-md-min) {
-    margin: none;
+    margin: 0;
   }
 
   &__title {

@@ -1,5 +1,52 @@
+import { collection, getDocs } from "firebase/firestore";
+import Article from "../../components/Article/Article";
+import { db } from "../../firebase-config";
+import { useEffect, useState } from "react";
+
 const Blog = () => {
-  return <div className="Blog">Blog Page</div>;
+  const postsCollectionRef = collection(db, "posts");
+  const [postList, setPostList] = useState([]);
+
+  const getArticles = async () => {
+    try {
+      const data = (await getDocs(postsCollectionRef)).docs.map((doc) => ({
+        ...doc.data(),
+        id: doc.id,
+      }));
+      const sortedData = data.sort((a, b) => {
+        // Compare publishDate fields and return appropriate value
+        if (a.published < b.published) return 1; // b comes before a
+        if (a.published > b.published) return -1; // a comes before b
+        return 0; // dates are equal
+      });
+      setPostList((prev) => sortedData);
+      return sortedData;
+    } catch (error) {
+      console.error("Error fetching posts:", error);
+    }
+  };
+
+  // get articles for list
+  useEffect(() => {
+    getArticles();
+  }, []);
+
+  return (
+    <>
+      <section className="article__list">
+        {postList.map((post) => (
+          <Article
+            truncated={false}
+            title={post.title}
+            text={post.text}
+            published={post.published}
+            id={post.id}
+            // callback={() => setIsEditing(false)}
+          />
+        ))}
+      </section>
+    </>
+  );
 };
 
 export default Blog;

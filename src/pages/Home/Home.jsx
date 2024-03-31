@@ -12,6 +12,7 @@ import {
   MEMBERS,
 } from "../../assets/copy/home.js";
 import ContactForm from "../../components/ContactForm/ContactForm.jsx";
+import { scrollToSection } from "../../helpers/scrollToSection.js";
 
 const Home = () => {
   return (
@@ -19,7 +20,16 @@ const Home = () => {
       <section className="hero">
         <h1 className="hero__title">{HERO_TITLE}</h1>
         <p className="hero__description">{HERO_TEXT}</p>
-        <button className="call-to-action">Get In Touch</button>
+        <a
+          className="call-to-action"
+          href={"#contact-form"}
+          onClick={(e) => {
+            e.preventDefault();
+            scrollToSection("contact-form");
+          }}
+        >
+          Get In Touch
+        </a>
       </section>
       <section className="services">
         <h2 className="section__title">Services We Provide</h2>
@@ -28,7 +38,6 @@ const Home = () => {
             <ServiceCard key={index} {...service} />
           ))}
         </div>
-        <button className="call-to-action">See More</button>
       </section>
       <section className="members">
         <h2 className="section__title">Meet Our Team</h2>
@@ -37,7 +46,6 @@ const Home = () => {
           <MemberCard image={BILL} {...MEMBERS[1]} />
           <MemberCard image={LOUISE} {...MEMBERS[2]} />
         </div>
-        <button className="call-to-action">Get To Know Us</button>
       </section>
       <ContactForm />
     </>

@@ -47,7 +47,7 @@ const ContactForm = () => {
   };
 
   return (
-    <form className="contact-form" onSubmit={handleSubmit}>
+    <form id="contact-form" className="contact-form" onSubmit={handleSubmit}>
       <h2 className="section__title">{callToAction}</h2>
       <div>
         <label>
