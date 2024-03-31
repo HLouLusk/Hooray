@@ -1,0 +1,55 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/partials" as *;
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 24px;
+  max-width: 500px;
+  margin: 24px auto;
+  background-color: $beige;
+  border-radius: 10px;
+  border: 2px solid $blue;
+  box-shadow: $darkest 0px 23px 37px -5px;
+
+  label {
+    margin: 0px;
+  }
+
+  .contact-label--required {
+    color: rgb(205, 14, 14);
+    font-weight: bold;
+  }
+
+  .contact-input {
+    width: 100%;
+    box-sizing: border-box;
+    padding: 12px 10px 2px 2px;
+    font-size: 16px;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    background-color: transparent;
+
+    &--auto-resize {
+      font-weight: 100;
+      resize: none;
+      overflow: hidden;
+      font-family: inherit;
+    }
+  }
+
+  .single-thumb .range-slider__thumb[data-lower] {
+    width: 0;
+  }
+  .single-thumb .range-slider__range {
+    border-radius: 6px;
+  }
+
+  .range-slider {
+    box-sizing: border-box;
+    margin: 24px 0;
+    height: 2px;
+  }
+}

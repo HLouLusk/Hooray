@@ -1,4 +1,3 @@
-import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Admin from "./pages/Admin/Admin";
@@ -7,8 +6,11 @@ import Portfolio from "./pages/Portfolio/Portfolio";
 import About from "./pages/About/About";
 import Blog from "./pages/Blog/Blog";
 import Header from "./components/Header/Header";
+import Footer from "./components/Footer/Footer";
+import "./App.scss";
+import ContactForm from "./components/ContactForm/ContactForm";
 
-function App() {
+const App = () => {
   return (
     <Router>
       <Header />
@@ -23,7 +25,9 @@ function App() {
           <Route path="/~admin/:id" element={<Admin />} />
         </Routes>
       </main>
+      <Footer />
     </Router>
   );
-}
+};
+
 export default App;

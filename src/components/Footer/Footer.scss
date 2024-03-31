@@ -1,0 +1,21 @@
+@use "../../styles/partials" as *;
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 36px;
+  background-color: $light;
+  font-size: 18px;
+  margin: 0;
+
+  &__left {
+    display: flex;
+    align-items: center;
+  }
+
+  img {
+    max-width: 40px;
+    padding-right: 1rem;
+  }
+}

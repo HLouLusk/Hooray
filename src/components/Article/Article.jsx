@@ -1,7 +1,7 @@
 import { useNavigate } from "react-router-dom";
 import "./Article.scss";
 
-const Article = ({ title, text, published, id, callback }) => {
+const Article = ({ truncated, title, text, published, id, callback }) => {
   const navigate = useNavigate();
 
   const truncateText = (text, maxLength) => {
@@ -38,10 +38,10 @@ const Article = ({ title, text, published, id, callback }) => {
       style={{ cursor: "pointer" }}
     >
       <div className="post__header">
-        <h2>{truncateText(title, 25)}</h2>
+        <h2>{truncated ? truncateText(title, 25) : title}</h2>
       </div>
       <div className="post__body">
-        <p>{truncateText(text, 125)}</p>
+        <p>{truncated ? truncateText(text, 125) : truncateText(text, 500)}</p>
         <p className="timestamp">{published ? formatDate(published) : ""}</p>
       </div>
     </section>

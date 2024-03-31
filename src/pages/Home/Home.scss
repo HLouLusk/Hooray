@@ -1,0 +1,119 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/partials" as *;
+
+.services {
+  position: relative;
+  @include info-section;
+  padding: 5vh 32px 160px;
+  background: $light;
+
+  &__title {
+    @include mobile-header;
+    text-align: center;
+    padding: 20px 0;
+
+    @media (min-width: $screen-md-min) {
+      font-size: 30px;
+    }
+  }
+
+  &__card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    @media (min-width: $screen-md-min) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-evenly;
+    }
+  }
+}
+
+.members {
+  position: relative;
+  @include info-section;
+  padding: 5vh 32px 160px;
+  background: $dark;
+
+  &__card-container {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    @media (min-width: $screen-md-min) {
+      flex-direction: row;
+    }
+  }
+}
+
+.contact {
+  margin: 0;
+  padding: 5vh 32px;
+  background: $terracotta;
+}
+
+// Hero Bottom
+.custom-shape-divider-bottom-1711915537 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1711915537 svg {
+  position: relative;
+  display: block;
+  width: calc(157% + 1.3px);
+  height: 167px;
+}
+
+.custom-shape-divider-bottom-1711915537 .shape-fill {
+  fill: $light;
+}
+
+// Services Section Bottom
+.custom-shape-divider-bottom-1711916057 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1711916057 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 104px;
+}
+
+.custom-shape-divider-bottom-1711916057 .shape-fill {
+  fill: $dark;
+}
+
+// Members Bottom
+.custom-shape-divider-bottom-1711916440 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1711916440 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 104px;
+}
+
+.custom-shape-divider-bottom-1711916440 .shape-fill {
+  fill: $terracotta;
+}

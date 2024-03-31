@@ -1,0 +1,32 @@
+@use "../../styles/mixins" as *;
+
+.member {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 24px;
+
+  @media (min-width: $screen-md-min) {
+    flex-direction: column;
+  }
+
+  &__image {
+    width: 20vw;
+    height: auto;
+    border-radius: 12.5vw;
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5em;
+  }
+
+  &__name {
+    @include mobile-label;
+  }
+
+  &__text {
+    @include mobile-copy;
+  }
+}

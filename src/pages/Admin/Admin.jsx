@@ -17,7 +17,7 @@ import { useNavigate, useParams } from "react-router-dom";
 const Admin = () => {
   const navigate = useNavigate();
   // login flow
-  const [isLoggedIn, setIsLoggedIn] = useState(true);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
   // !change use state above for editing
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -183,99 +183,99 @@ const Admin = () => {
   // if we ARE logged in then return the page content
   return (
     <>
-      <main>
-        {!isLoggedIn ? (
-          <section className="login-container">
-            <h2>Login</h2>
-            <form>
-              <div className="form-group">
-                <label htmlFor="email-address">Email address</label>
-                <input
-                  id="email-address"
-                  name="email"
-                  type="email"
-                  required
-                  placeholder="Email address"
-                  onChange={(e) => setEmail(e.target.value)}
-                  value={email}
-                />
-              </div>
-              <div className="form-group">
-                <label htmlFor="password">Password</label>
-                <input
-                  id="password"
-                  name="password"
-                  type="password"
-                  required
-                  placeholder="Password"
-                  onChange={(e) => setPassword(e.target.value)}
-                  value={password}
-                />
-              </div>
-              <div>
-                <button className="btn-login" onClick={onLogin}>
-                  Login
-                </button>
-              </div>
-            </form>
+      {!isLoggedIn ? (
+        <section className="login-container">
+          <h2>Login</h2>
+          <form>
+            <div className="form-group">
+              <label htmlFor="email-address">Email address</label>
+              <input
+                className="login__input"
+                id="email-address"
+                name="email"
+                type="email"
+                required
+                placeholder="Email address"
+                onChange={(e) => setEmail(e.target.value)}
+                value={email}
+              />
+            </div>
+            <div className="form-group">
+              <label htmlFor="password">Password</label>
+              <input
+                className="login__input"
+                id="password"
+                name="password"
+                type="password"
+                required
+                placeholder="Password"
+                onChange={(e) => setPassword(e.target.value)}
+                value={password}
+              />
+            </div>
+            <div>
+              <button className="btn-login" onClick={onLogin}>
+                Login
+              </button>
+            </div>
+          </form>
+        </section>
+      ) : (
+        <div className="admin">
+          <section className="article__list">
+            {postList.map((post) => (
+              <Article
+                title={post.title}
+                text={post.text}
+                published={post.published}
+                id={post.id}
+                callback={() => setIsEditing(false)}
+              />
+            ))}
           </section>
-        ) : (
-          <div className="admin">
-            <section className="article__list">
-              {postList.map((post) => (
-                <Article
-                  title={post.title}
-                  text={post.text}
-                  published={post.published}
-                  id={post.id}
-                  callback={() => setIsEditing(false)}
-                />
-              ))}
+          <section className="preview">
+            <section className="preview__controls">
+              {isEditing ? (
+                <>
+                  <button onClick={toggleCancelUI}>Cancel</button>
+                  <button onClick={handleSave}>Save</button>
+                </>
+              ) : (
+                <>
+                  {id && <button onClick={toggleEditUI}>Edit</button>}
+                  {id && <button onClick={handleDelete}>Delete</button>}
+                  <button onClick={toggleCreateUI}>Create</button>
+                </>
+              )}
             </section>
-            <section className="preview">
-              <section className="preview__controls">
-                {isEditing ? (
-                  <>
-                    <button onClick={toggleCancelUI}>Cancel</button>
-                    <button onClick={handleSave}>Save</button>
-                  </>
-                ) : (
-                  <>
-                    {id && <button onClick={toggleEditUI}>Edit</button>}
-                    {id && <button onClick={handleDelete}>Delete</button>}
-                    <button onClick={toggleCreateUI}>Create</button>
-                  </>
-                )}
-              </section>
-              <div className="preview__content">
-                <input
-                  className={`preview__title ${
-                    isEditing && "preview__title--editing"
-                  }`}
-                  placeholder="Title..."
-                  onChange={(event) => {
-                    setTitle(event.target.value);
-                  }}
-                  value={title}
-                  disabled={!isEditing}
-                />
+            <div className="preview__content">
+              <input
+                className={`preview__title ${
+                  isEditing && "preview__title--editing"
+                }`}
+                placeholder="Title..."
+                onChange={(event) => {
+                  setTitle(event.target.value);
+                }}
+                value={title}
+                disabled={!isEditing}
+              />
 
-                <textarea
-                  className={`preview__text ${
-                    isEditing && "preview__text--editing"
-                  }`}
-                  placeholder="Text..."
-                  onChange={(event) => {
-                    setText(event.target.value);
-                  }}
-                  value={text}
-                  disabled={!isEditing}
-                />
-              </div>
-            </section>
-          </div>
-        )}
-      </main>
+              <textarea
+                className={`preview__text ${
+                  isEditing && "preview__text--editing"
+                }`}
+                placeholder="Text..."
+                onChange={(event) => {
+                  setText(event.target.value);
+                }}
+                value={text}
+                disabled={!isEditing}
+              />
+            </div>
+          </section>
+        </div>
+      )}
     </>
   );
 };
