@@ -1,0 +1,23 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/partials" as *;
+
+.main-content {
+  background-color: antiquewhite;
+  padding: 20px 20px;
+}
+
+.blog-title {
+  @include mobile-subheader;
+  margin: 25px 20px;
+  margin-top: 0px;
+
+  @media (min-width: $screen-md-min) {
+    font-size: 28px;
+  }
+}
+
+.blog-text {
+  margin: 20px 20px;
+  margin-bottom: 0px;
+  line-height: 25px;
+}

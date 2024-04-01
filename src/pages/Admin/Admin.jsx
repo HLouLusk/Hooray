@@ -229,6 +229,7 @@ const Admin = () => {
                 text={post.text}
                 published={post.published}
                 id={post.id}
+                baseURL="~admin"
                 callback={() => setIsEditing(false)}
               />
             ))}

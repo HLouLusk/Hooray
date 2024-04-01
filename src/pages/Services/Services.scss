@@ -1,0 +1,28 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/partials" as *;
+
+.info__section {
+  @include info-section;
+  background-color: $beige;
+  border-bottom: #474787 3px dotted;
+
+  &-title {
+    @include mobile-header;
+    text-align: center;
+    padding-top: 0;
+
+    @media (min-width: $screen-md-min) {
+      font-size: 40px;
+      color: #474787;
+    }
+  }
+
+  &-text {
+    color: #474787;
+    @include mobile-copy;
+
+    @media (min-width: $screen-md-min) {
+      @include tablet-body-copy;
+    }
+  }
+}

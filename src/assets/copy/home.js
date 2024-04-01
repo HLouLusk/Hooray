@@ -64,7 +64,7 @@ export const MEMBERS = [
     name: "Bill Xu",
     role: "Senior Full Stack Developer",
     description:
-      "Developer with experience in all stages of advanced web development. Key areas of focus are UI, testing, and debugging. Eager to approach new technologies through hands-on learning. Experience outside web development includes Java, Python and R backed by a strong foundation in mathematics. Passionate about technology as it relates to linguistics, economics, transportation and finance.",
+      "Full Stack Developer with experience in front end web development and back end server applications. Interest in system design and automation. Experience with JavaScript development, Python, Go, and Java, but always excited to learn and work with new technologies. Always loves a good puzzle and enthused about adding new and interesting technologies to my toolbox to figure out innovative solutions to challenging problems.",
   },
   {
     name: "Louise Lusk",

@@ -33,15 +33,16 @@ const Blog = () => {
 
   return (
     <>
-      <section className="article__list">
-        {postList.map((post) => (
+      <section className="main-content article__list">
+        {postList.map((post, index) => (
           <Article
+            key={"article" + index}
             truncated={false}
             title={post.title}
             text={post.text}
             published={post.published}
             id={post.id}
-            // callback={() => setIsEditing(false)}
+            baseURL="blog"
           />
         ))}
       </section>
