@@ -6,34 +6,26 @@
 
 What is your app? Brief description in a couple of sentences.
 
-It is a website for a software agency startup for two friends. It should be aesthetically pleasing with great UI/UX. It should have strong calls to action for engaging with the company's products and services.
+"Hooray" is a website designed for a software agency startup, envisioned by two friends. It aims to provide a visually appealing platform with exceptional UI/UX, focusing on strong calls to action for engaging with the company's products and services.
 
 ### Problem
 
 Why is your app needed? Background information around any pain points or other reasons.
 
-My friends have very busy lifestyles, and I would like to help them acheive their goals with this startup. They haven't found the time to build this website for themselves yet. I will be seeking user stories from them for this capstone project.
-
+The need for this app arises from the busy schedules of the founders, who have not yet had the time to develop their website. Additionally, the project aims to address the challenge of the software engineering field being dominated by senior developers, by offering opportunities to upcoming talented developers.
 ### User Profile
 
 Who will use your app? How will they use it? Any special considerations that your app must take into account.
 
-The app is for businesses or individuals interested nearshoring IT workers for their web and software applications.
+The target users of the app are businesses or individuals interested in nearshoring IT workers for their web and software applications. The app should cater to their needs with a user-friendly interface.
 
 ### Features
 
 List the functionality that your app will include. These can be written as user stories or descriptions with related details. Do not describe _how_ these features are implemented, only _what_ needs to be implemented.
 
-Landing Page:
-
-There needs to be a page that describes the services in depth that connects the user to the get in touch page. This page should include animations, and visually captivating design to show off my friend's talents and capabilities.
-
-Contact Form:
-
-There will also be a contact form to get in touch with my friends and inquire about services and prices. It will create an email and send the message to them?
-
-Our Work:
-There needs to be a page describing and displaying their past work. This page should be clean, clear and easy to navigate with great visuals.
+Landing Page: A visually captivating page describing the services offered, with animations and strong calls to action.
+Contact Form: An inquiry form enabling users to get in touch with the founders and inquire about services and prices.
+Our Work: A page showcasing the agency's past work with clear navigation and compelling visuals.
 
 ## Implementation
 
@@ -41,7 +33,10 @@ There needs to be a page describing and displaying their past work. This page sh
 
 List technologies that will be used in your app, including any libraries to save time or provide more functionality. Be sure to research any potential limitations.
 
-React, Heroku, Node, Express, Strapi or Firebase (maybe for backend CMS and authentication).
+Frontend: React, EmailJS
+Backend: Firebase
+Database: Firebase (for CMS and authentication)
+
 
 Limitations: only time and energy. Learning about CMS and Authentication
 
@@ -55,13 +50,15 @@ I will not require an external API for this project.
 
 List the pages of your app with brief descriptions. You can show this visually, or write it out.
 
--Landing Page
--Admin Page (Content Management System)
--Services
--Our Work => past work
--About
--Blog => Dynamic content will be here, it will load articles from a database.
--Contact us
+Landing Page
+Admin Page (Content Management System)
+Services
+Portfolio(past projects)
+About
+Blog (Dynamic content)
+
+A reusable contact form has been created in lieu of a contact us page
+
 
 ### Mockups
 
@@ -93,27 +90,25 @@ List endpoints that your server will implement, including HTTP methods, paramete
 
 Does your project include any login or user profile functionality? If so, describe how authentication/authorization will be implemented.
 
-website will have a route /admin which will promt the user to login.
-Logging in will allow the user to see blog management page with UI for creating and deleting articles
-At this time, I am undecided of the approach, but I am confident I will use either Passport.js or Strapi for the authentication and content management
+Authentication is implemented via Firebase, allowing access to the admin panel for managing blog content.
 
 ## Roadmap
 
 Scope your project as a sprint. Break down the tasks that will need to be completed and map out timeframes for implementation. Think about what you can reasonably complete before the due date. The more detail you provide, the easier it will be to build.
 
-I plan to start this website by simply filling it with the necessary content and components, then styling it all. I would like to have this complete as soon as possible.
-The design of this website has been the most challenging part for me so far. Having more time to think about the design and check out references while I work on the content will help me manage my time and make a beautiful website.
+-Content and Components Setup: Populate necessary content and components, focusing on styling.
+-Design Refinement: Continuously refine the design based on references and feedback.
+-Blog Post Creation: Write a blog post before submission, populate other posts with sample text.
+-Final Touches: Implement animations and graphics as time permits.
 
-Before submission, I would like to have a blog post written by one of my friends. In the meantime, I will populate the posts with sample text.
-
-This roadmap is still in the works!
 
 ## Nice-to-haves
 
 Your project will be marked based on what you committed to in the above document. Under nice-to-haves, you can list any additional features you may complete if you have extra time, or after finishing.
 
-/blog/ => allows a PUT request to edit blog content (authenticated users)
-CSS and Javascript Animations
+Additional animations and graphics to enhance the overall user experience.
+Link to LinkedIn for each team member on “ABOUT” page.
+Picture upload functionality on the blogs. 
 
 # Getting Started with Create React App
 
