@@ -43,7 +43,6 @@ const Blog = () => {
             published={post.published}
             id={post.id}
             baseURL="blog"
-            // callback={() => setIsEditing(false)}
           />
         ))}
       </section>
