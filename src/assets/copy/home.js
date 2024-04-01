@@ -70,6 +70,6 @@ export const MEMBERS = [
     name: "Louise Lusk",
     role: "Frontend Specialist",
     description:
-      "Developer with experience in all stages of advanced web development. Key areas of focus are UI, testing, and debugging. Eager to approach new technologies through hands-on learning. Experience outside web development includes Java, Python and R backed by a strong foundation in mathematics. Passionate about technology as it relates to linguistics, economics, transportation and finance.",
+      "Dedicated front-end developer passionate about building immersive and intuitive user interfaces. With a keen eye for design and a knack for problem-solving, I specialize in crafting seamless experiences that captivate and engage users. From conceptualization to implementation, I thrive on bringing designs to life with precision and creativity. My journey in front-end development is fueled by a curiosity for emerging technologies and a commitment to staying ahead of industry trends. Let's collaborate and bring your visions to reality with cutting-edge front-end solutions!.",
   },
 ];
