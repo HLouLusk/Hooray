@@ -1,7 +1,15 @@
 import { useNavigate } from "react-router-dom";
 import "./Article.scss";
 
-const Article = ({ truncated, title, text, published, id, callback }) => {
+const Article = ({
+  truncated,
+  title,
+  text,
+  published,
+  id,
+  baseURL,
+  callback,
+}) => {
   const navigate = useNavigate();
 
   const truncateText = (text, maxLength) => {
@@ -13,8 +21,8 @@ const Article = ({ truncated, title, text, published, id, callback }) => {
   };
 
   const handleClick = () => {
-    navigate(`/~admin/${id}`);
-    callback();
+    navigate(`/${baseURL}/${id}`);
+    callback && callback();
   };
 
   const formatDate = (timestampInMs) => {

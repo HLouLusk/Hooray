@@ -141,4 +141,8 @@ body {
     align-items: center;
     gap: 24px;
   }
+
+  .main-content {
+    min-height: calc(100vh - 154px);
+  }
 }
