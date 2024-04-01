@@ -1,0 +1,34 @@
+@use "../../styles/mixins" as *;
+@use "../../styles/partials" as *;
+
+.about__link {
+  text-decoration: none;
+  color: adjust-hue($color: #474787, $degrees: 0);
+}
+
+.custom-shape-divider-bottom-1711936897 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-bottom-1711936897 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 210px;
+}
+
+.custom-shape-divider-bottom-1711936897 .shape-fill {
+  fill: $beige;
+}
+
+.contact-portfolio {
+  background-color: $beige;
+  margin: 0;
+  padding: 5vh 32px;
+}

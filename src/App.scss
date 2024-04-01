@@ -73,6 +73,10 @@ body {
       padding: 5vh 32px 200px;
     }
 
+    &--extra-wavy {
+      padding: 5vh 32px 250px;
+    }
+
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -107,6 +111,14 @@ body {
       @media (min-width: $screen-lg-min) {
         font-size: 60px;
         line-height: 60px;
+      }
+    }
+
+    &__subtitle {
+      @include mobile-subheader;
+
+      @media (min-width: $screen-md-min) {
+        @include tablet-subheader;
       }
     }
 

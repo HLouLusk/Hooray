@@ -2,6 +2,7 @@ import { collection, doc, getDoc } from "firebase/firestore";
 import { useParams } from "react-router-dom";
 import { db } from "../../firebase-config";
 import { useEffect, useState } from "react";
+import "./BlogReader.scss";
 
 const BlogReader = () => {
   const [title, setTitle] = useState("");
@@ -34,8 +35,8 @@ const BlogReader = () => {
 
   return (
     <section className="main-content">
-      <h1>{title}</h1>
-      <p>{text}</p>
+      <h1 className="blog-title">{title}</h1>
+      <p className="blog-text">{text}</p>
     </section>
   );
 };
