@@ -1,0 +1,19 @@
+.post {
+  border-right: 1px solid;
+
+  &__header {
+    padding-left: 1rem;
+    padding-top: 1rem;
+  }
+
+  &__body {
+    border-bottom: 1px solid;
+    padding: 1rem;
+  }
+}
+
+.timestamp {
+  text-align: right;
+  padding-top: 10px;
+  font-size: 14px;
+}

@@ -1,0 +1,74 @@
+//breakpoints of different screensizes
+$screen-md-min: 768px;
+$screen-lg-min: 1280px;
+
+// tablet and desktop typography
+@mixin tablet-page-header {
+  font-size: 60px;
+  line-height: 68px;
+  font-weight: 700;
+}
+
+@mixin tablet-section-header {
+  font-size: 36px;
+  line-height: 44px;
+  font-weight: 700;
+}
+
+@mixin tablet-subheader {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+}
+
+@mixin tablet-body-copy {
+  font-size: 24px;
+  line-height: 36px;
+  font-weight: 400;
+}
+
+@mixin tablet-footer-copy {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+@mixin tablet-label {
+  font-size: 12px;
+  line-height: 20px;
+  font-weight: 700;
+}
+
+// mobile typography
+@mixin mobile-header {
+  font-size: 28px;
+  line-height: 36px;
+  font-weight: 600;
+}
+
+@mixin mobile-subheader {
+  font-size: 24px;
+  line-height: 32px;
+  font-weight: 600;
+}
+
+@mixin mobile-copy {
+  font-size: 17px;
+  line-height: 20px;
+  font-weight: 400;
+}
+
+@mixin mobile-label {
+  font-size: 20px;
+  line-height: 20px;
+  font-weight: 600;
+}
+
+@mixin info-section {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  width: 100%;
+  height: fit-content;
+  padding: 10vh 32px;
+}

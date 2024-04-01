@@ -1,0 +1,47 @@
+@use "../../styles/mixins" as *;
+
+.service {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  padding: 16px 2.25rem;
+  border-radius: 2rem;
+  text-align: left;
+  border: 2px solid #ccc;
+  box-shadow: 0 0 50px #ccc;
+  margin: 5px auto;
+  gap: 1rem;
+  width: 300px;
+  min-width: 270px;
+  max-width: 330px;
+
+  @media (min-width: $screen-md-min) {
+    margin: 0;
+  }
+
+  &__title {
+    @include mobile-subheader;
+  }
+
+  &__text {
+    @include mobile-copy;
+  }
+
+  &__tech-container {
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1 1;
+    align-content: flex-end;
+    row-gap: 0.5rem;
+    column-gap: 0.5rem;
+  }
+
+  &__tech {
+    display: flex;
+    width: fit-content;
+    border-radius: 1rem;
+    justify-content: center;
+    background-color: #fac29e;
+    padding: 0.4rem 0.8rem;
+  }
+}
